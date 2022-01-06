@@ -20,8 +20,10 @@ public class Category {
     @Column(name = "category_title")
     private String categoryTitle;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "parent_category_id", nullable = false)
-    private ParentCategory parentCategory;
+    private Long parentCategoryId;
+
+//    @ManyToOne(optional = false)
+//    @JoinColumn(name = "parent_category_id", nullable = false)
+//    private ParentCategory parentCategory;
 
 }

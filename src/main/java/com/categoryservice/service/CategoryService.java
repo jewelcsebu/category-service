@@ -20,11 +20,7 @@ public class CategoryService {
     public void saveCategory(CategoryDto c) {
         Category category = new Category();
         category.setCategoryTitle(c.getCategoryTitle());
-
-        ParentCategory parentCategory = new ParentCategory();
-        parentCategory.setId(c.getParentCategoryId());
-
-        category.setParentCategory(parentCategory);
+        category.setParentCategoryId(category.getParentCategoryId());
         categoryRepository.save(category);
     }
 
@@ -51,6 +47,6 @@ public class CategoryService {
     }
 
     public List<Category> fetchParentCategories(Long id) {
-        return categoryRepository.findByAndParentCategory_Id(id);
+        return categoryRepository.findByParentCategoryId(id);
     }
 }

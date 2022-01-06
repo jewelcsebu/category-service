@@ -26,15 +26,16 @@ public class ParentCategory {
     @Column(name = "category_title")
     private String ParentCategoryTitle;
 
-    @ManyToOne( optional = false)
-    @JoinColumn(name = "grant_category_id", nullable = false)
-    private GrandParentCategory grandParentCategory;
+    private Long grandParentCategoryId;
+
+//    @ManyToOne( optional = false)
+//    @JoinColumn(name = "grant_category_id", nullable = false)
+//    private GrandParentCategory grandParentCategory;
 
 
-//    @JsonIgnore
-//    @OneToMany(mappedBy = "parentCategory",
-//            cascade = CascadeType.ALL)
-//    private List<Category> categories;
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Category> categories;
 
 
 

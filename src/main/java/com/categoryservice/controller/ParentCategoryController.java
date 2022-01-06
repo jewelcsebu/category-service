@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
+@RequestMapping("/api/v1/category-service")
 public class ParentCategoryController {
 
     @Autowired
@@ -77,7 +78,7 @@ public class ParentCategoryController {
                 .orElseThrow(() ->new ResourceNotFoundException("Parent Category Not found by id "+id));
 
 
-        parentCategory.setGrandParentCategory(grandParentCategory);
+        parentCategory.setGrandParentCategoryId(grandParentCategory.getId());
 
         System.out.println(parentCategoryDto);
         parentCategoryService.updateParentCategory(parentCategory);

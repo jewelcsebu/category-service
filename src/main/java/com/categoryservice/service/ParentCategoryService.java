@@ -24,9 +24,7 @@ public class ParentCategoryService {
         ParentCategory parentCategory = new ParentCategory();
         parentCategory.setParentCategoryTitle(pcd.getParentCategoryTitle());
 
-        GrandParentCategory gpc = new GrandParentCategory();
-        gpc.setId(pcd.getGrandParentCategoryId());
-        parentCategory.setGrandParentCategory(gpc);
+        parentCategory.setGrandParentCategoryId(parentCategory.getGrandParentCategoryId());
         // save to database
         parentCategoryRepository.save(parentCategory);
 
@@ -51,6 +49,6 @@ public class ParentCategoryService {
     }
 
     public List<ParentCategory> fetchParentCategories(Long id) {
-        return parentCategoryRepository.findParentCategoriesByAndGrandParentCategory_Id(id);
+        return parentCategoryRepository.findAllByGrandParentCategoryId(id);
     }
 }

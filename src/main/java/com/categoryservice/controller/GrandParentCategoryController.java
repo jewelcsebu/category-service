@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/api/v1/category-service")
 public class GrandParentCategoryController {
 
     @Autowired

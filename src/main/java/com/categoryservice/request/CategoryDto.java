@@ -20,7 +20,6 @@ public class CategoryDto implements Serializable {
 
     private Long parentCategoryId;
 
-    private ParentCategory parentCategory;
 
 
 

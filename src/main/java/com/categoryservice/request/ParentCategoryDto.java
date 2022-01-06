@@ -23,7 +23,6 @@ public class ParentCategoryDto implements Serializable {
     private Long id;
     private String parentCategoryTitle;
     private Long grandParentCategoryId;
-    private GrandParentCategory grandParentCategory;
 
 
 

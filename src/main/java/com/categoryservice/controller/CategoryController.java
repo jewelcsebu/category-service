@@ -17,6 +17,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/api/v1/category-service")
 public class CategoryController {
 
     @Autowired
@@ -76,7 +77,7 @@ public class CategoryController {
                 .orElseThrow(() ->new ResourceNotFoundException("Category Not found by id "+id));
 
 
-        category.setParentCategory(parentCategory);
+        category.setParentCategoryId(parentCategory.getId());
 
         System.out.println(categoryDto);
         categoryService.updateCategory(category);

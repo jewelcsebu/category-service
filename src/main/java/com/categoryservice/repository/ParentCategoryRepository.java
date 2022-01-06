@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface ParentCategoryRepository extends JpaRepository<ParentCategory,Long> {
+    List<ParentCategory> findAllByGrandParentCategoryId(Long id);
 
-    List<ParentCategory> findParentCategoriesByAndGrandParentCategory_Id(Long id);
+//    List<ParentCategory> findParentCategoriesByAndGrandParentCategory_Id(Long id);
 }
